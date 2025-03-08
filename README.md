@@ -6,7 +6,7 @@ The official template repository for Define 3.0
 
 
 
-# < Project Name >
+# YOGA POSE ESTIMATION
  Cover Image  If applicable
 
 ### Team Information
@@ -17,8 +17,8 @@ The official template repository for Define 3.0
 | Name | Role | GitHub | LinkedIn |
 |------|------|--------|----------|
 | Gopika Biju S | Member | https://github.com/GopikaBijuS | https://www.linkedin.com/in/gopika-biju-s-871619270 |
-| Keerthana Suresh D | Leader | [@username](https://github.com/username) | [Profile](https://linkedin.com/in/username) |
-| Krishnapriya R | Member | [@username](https://github.com/username) | [Profile](https://linkedin.com/in/username) |
+| Keerthana Suresh D | Leader | https://github.com/sankeertanaah | https://www.linkedin.com/in/keerthana-suresh-d-39196b266 |
+| Krishnapriya R | Member | https://github.com/Krisha-priya | www.linkedin.com/in/krishnapriya-r-73b3b8270 |
 
 ## Project Details
 
