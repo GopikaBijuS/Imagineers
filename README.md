@@ -10,16 +10,15 @@ The official template repository for Define 3.0
  Cover Image  If applicable
 
 ### Team Information
-- **Team Name**: <Team Name> 
-- **Track**: < Track >
+- **Team Name**: Imagineers
+- **Track**: Sustainability+AI
 
-### Team Members
+### Team Members:
 | Name | Role | GitHub | LinkedIn |
 |------|------|--------|----------|
-| [Full Name] | [Role] | [@username](https://github.com/username) | [Profile](https://linkedin.com/in/username) |
-| [Full Name] | [Role] | [@username](https://github.com/username) | [Profile](https://linkedin.com/in/username) |
-| [Full Name] | [Role] | [@username](https://github.com/username) | [Profile](https://linkedin.com/in/username) |
-| [Full Name] | [Role] | [@username](https://github.com/username) | [Profile](https://linkedin.com/in/username) |
+| Gopika Biju S | Member | https://github.com/GopikaBijuS | https://www.linkedin.com/in/gopika-biju-s-871619270 |
+| Keerthana Suresh D | Leader | [@username](https://github.com/username) | [Profile](https://linkedin.com/in/username) |
+| Krishnapriya R | Member | [@username](https://github.com/username) | [Profile](https://linkedin.com/in/username) |
 
 ## Project Details
 
