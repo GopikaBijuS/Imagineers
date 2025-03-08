@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pose Detection</title>
+    <title>{{ asana }} Pose Detection</title>
     <style>
         body {
             margin: 0;
@@ -16,17 +16,15 @@
 
         .container {
             display: flex;
-            flex-direction: row;
-            justify-content: space-around;
+            flex-direction: column;
             align-items: center;
-            width: 90%;
-            max-width: 1200px;
+            width: 100%;
         }
 
         .video-container {
             position: relative;
-            width: 50%; /* Adjust this to make space for the accuracy bar */
-            max-width: 600px; /* Limit the size */
+            width: 50%;
+            max-width: 600px;
         }
 
         .video-container img {
@@ -37,101 +35,40 @@
         }
 
         .accuracy-box {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
             background: rgba(0, 0, 0, 0.7);
             color: white;
-            padding: 8px 15px;
-            border-radius: 8px;
-            font-size: 16px;
-            text-align: center;
-        }
-
-        .progress-container {
-            width: 250px;
-            height: 20px;
-            background: #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #aaa;
-            margin-top: 10px;
-        }
-
-        .progress-bar {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, #ff3d00, #ffea00, #00e676);
-            transition: width 0.5s ease-in-out;
-        }
-
-        .scroll-container {
-            background-color: #fff;
-            overflow-y: auto;
-            max-height: 300px;
-            width: 200px;
             padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-        }
-
-        .scroll-container img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
             border-radius: 5px;
+            margin-top: 10px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
+    <h1>Detecting: {{ asana }}</h1>
+
     <div class="container">
-        <!-- Video Section -->
         <div class="video-container">
-            <img id="video-stream" src="{{ url_for('video_feed1') }}" alt="Pose Detection">
+            <img id="video-stream" src="{{ url_for('video_feed1') }}?asana={{ asana }}" alt="Pose Detection">
             <div id="accuracy" class="accuracy-box">Waiting for Pose...</div>
-        </div>
-
-        <!-- Right Section (Pose Reference + Accuracy Bar) -->
-        <div class="right-section">
-            <div class="progress-container">
-                <div id="progress-bar" class="progress-bar"></div>
-            </div>
-
-            <div class="scroll-container">
-                <img src="static/img/Warrior II pose.png" alt="Warrior II Pose">
-                <img src="static/img/Tree pose.png" alt="Tree Pose">
-                <img src="static/img/T pose.png" alt="T Pose">
-                <img src="static/img/BhujangasanaT.png" alt="Bhujangasana">
-                <img src="static/img/ChakrasanaT.png" alt="Chakrasana">
-                <img src="static/img/NaukasanaT.png" alt="Naukasana">
-                <img src="static/img/ShavasanaT.png" alt="Shavasana">
-                <img src="static/img/SukhasanaT.png" alt="Sukhasana">
-                <img src="static/img/TrikonasanaT.png" alt="Trikonasana">
-            </div>
         </div>
     </div>
 
     <script>
         function updateAccuracy() {
-            fetch("{{ url_for('video_feed1') }}")
+            fetch("{{ url_for('video_feed1') }}?asana={{ asana }}")
                 .then(response => response.text())
                 .then(data => {
                     let match = data.match(/([A-Za-z\s]+),(\d+\.\d+)/);
                     if (match) {
-                        let poseName = match[1].trim();
+                        let detectedPose = match[1].trim();
                         let accuracy = parseFloat(match[2]);
 
-                        if (poseName !== "Unknown Pose") {
-                            document.getElementById("accuracy").innerText = `Pose: ${poseName} | Accuracy: ${accuracy.toFixed(2)}%`;
-                            document.getElementById("progress-bar").style.width = accuracy + "%";
+                        if (detectedPose === "{{ asana }}") {
+                            document.getElementById("accuracy").innerText = `Pose: ${detectedPose} | Accuracy: ${accuracy.toFixed(2)}%`;
                         } else {
                             document.getElementById("accuracy").innerText = "Pose Not Recognized";
-                            document.getElementById("progress-bar").style.width = "0%";
                         }
                     }
                 });
