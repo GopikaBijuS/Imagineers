@@ -11,7 +11,7 @@ The official template repository for Define 3.0
 
 ### Team Information
 - **Team Name**: Imagineers
-- **Track**: Sustainability+AI
+- **Track**:AI IN AYUSH
 
 ### Team Members:
 | Name | Role | GitHub | LinkedIn |
