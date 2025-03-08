@@ -1,0 +1,85 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRANA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo"></div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="asanas.html">ASANAS</a></li>
+                <li><a href="get.html">GET START</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pose Detection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Video Section -->
+        <div class="video-container">
+            <img id="video-stream" src="{{ url_for('video_feed1') }}" alt="Pose Detection">
+            <div id="accuracy" class="accuracy-box">Waiting for Pose...</div>
+        </div>
+
+        <!-- Right Section (Pose Reference + Accuracy Bar) -->
+        <div class="right-section">
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+            <div class="scroll-container">
+                <img src="static/img/Warrior II pose.png" alt="Warrior II Pose">
+                <img src="static/img/Tree pose.png" alt="Tree Pose">
+                <img src="static/img/T pose.png" alt="T Pose">
+                <img src="static/img/BhujangasanaT.png" alt="Bhujangasana">
+                <img src="static/img/ChakrasanaT.png" alt="Chakrasana">
+                <img src="static/img/NaukasanaT.png" alt="Naukasana">
+                <img src="static/img/ShavasanaT.png" alt="Shavasana">
+                <img src="static/img/SukhasanaT.png" alt="Sukhasana">
+                <img src="static/img/TrikonasanaT.png" alt="Trikonasana">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateAccuracy() {
+            fetch("{{ url_for('video_feed1') }}")
+                .then(response => response.text())
+                .then(data => {
+                    let match = data.match(/([A-Za-z\s]+),(\d+\.\d+)/);
+                    if (match) {
+                        let poseName = match[1].trim();
+                        let accuracy = parseFloat(match[2]);
+
+                        if (poseName !== "Unknown Pose") {
+                            document.getElementById("accuracy").innerText = `Pose: ${poseName} | Accuracy: ${accuracy.toFixed(2)}%`;
+                            document.getElementById("progress-bar").style.width = accuracy + "%";
+                        } else {
+                            document.getElementById("accuracy").innerText = "Pose Not Recognized";
+                            document.getElementById("progress-bar").style.width = "0%";
+                        }
+                    }
+                });
+        }
+
+        setInterval(updateAccuracy, 1000);
+    </script>
+
+</body>
+</html>
