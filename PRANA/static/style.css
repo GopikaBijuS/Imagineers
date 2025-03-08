@@ -1,0 +1,135 @@
+.a, .text, .signin, .signup, input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  height: 40px;
+  width: 250px;
+  border-radius: 20px;
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgb(120, 120, 200); 
+  padding-left: 15px;
+  margin-left: 8px;
+  color: #333;
+  font-size: 16px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0f0776;
+  box-shadow: 0 0 5px rgba(23, 11, 187, 0.5);
+}
+
+.a {
+  height: 100%;
+  width: 100%;
+  flex-direction: row;
+}
+
+.nav_signin:hover, .nav_signup:hover {
+  border-left: 4px solid #764b07;
+  background-color: #f2ede9a1;
+}
+
+.nav_signin, .nav_signup {
+  padding-left: 25px;
+  padding-right: 20px;
+  cursor: pointer;
+  padding: 25px;
+  margin-top: 10px;
+}
+.c, .d {
+  display: none;
+}
+html, body {
+  height: 100%;
+  /*background-color: rgba(228, 234, 246, 0.9);*/
+  background-image: url(img/back_gr.jpeg);
+  background-size: cover;
+  font-family: 'Arial', sans-serif;
+}
+
+.signin, .signup {
+  width: 450px;
+  height: 420px;
+  background-color: #fcdaa598;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgba(24, 18, 30, 0.6);
+  flex-direction: column;
+  padding: 20px;
+}
+.sign {
+  width: 140px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #6a3b02;
+  color: white;
+  margin-left: 27%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign:hover {
+  background-color: #6a3b02c9;
+}
+
+form div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+.navi {
+  width: 100px;
+  height: 400px;
+  border-radius: 20px 0 0 20px;
+  background-color: #f2cd99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.navi:hover {
+  background-color: #f2cd99;
+}
+
+@media (min-width:1000px) {
+  .signin, .signup {
+    width: 500px;
+  }
+}
+
+@media (min-width:1240px) {
+  .signin, .signup {
+    width: 370px;
+    height: 410px;
+    background-color: #fcdaa598;
+    border-radius: 0 20px 20px 0;
+  }
+  
+  .navi {
+    height: 430px;
+    background-color: #f2cd99;
+  }
+  
+  .imag {
+    height: 500px;
+    width: 500px;
+    border-radius: 20px;
+    background-color: #f2cd99;
+  }
+}
+
+@media (max-width:1240px) {
+  .imag {
+    display: none;
+  }
+}
+
+
+

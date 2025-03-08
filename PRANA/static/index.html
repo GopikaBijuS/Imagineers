@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRANA Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="a" width="100%" height="100%">
+        <div class="navi">
+            <img style="position: relative;" width="100px" src="img/logo2.png" alt="">
+            <h5 style="position: absolute;top: 231px;font-weight: 800;color: #6f4e29;">PRANA</h5>
+            <div class="nav_signin" id="in">
+                <img width="40px" src="img/sign-in.png" alt="">
+                <h5 style="margin: 0;">Sign In</h5>
+            </div>
+            <div id="up" class="nav_signup" style="padding-left: 20px;">
+                <img width="40px" src="img/add-user.png" alt="">
+                <h5 style="margin: 0;">Sign Up</h5>
+            </div>
+        </div>
+        <div><img class="imag" src="img\yoga1.jpeg" alt=""></div>
+        <div class="signup d">
+            <div class="text">
+                <h1 style="margin: 0px;">WELCOME TO PRANA</h1>
+                <h3 style="margin-top: 5px;">Fill your details</h3>
+                <form action="/signup" method="post">
+                    <div>
+                        <label for="u_user"><img width="20px" src="img/user.png" alt=""></label>
+                        <input id="u_user" name="username" type="text" placeholder="Username">
+                    </div>
+                    <div>
+                        <label for="u_mail"><img width="20px" src="img/email.png" alt=""></label>
+                        <input id="u_mail" name="email" type="text" placeholder="Email">
+                    </div>
+                    <div>
+                        <label for="u_pass"><img width="20px" src="img/padlock.png" alt=""></label>
+                        <input id="u_pass" name="password" type="password" placeholder="Password">
+                    </div>
+                    <input id="sign_in" class="sign" type="submit" value="Sign Up">
+                </form>
+            </div>
+        </div>
+        <div class="signin">
+            <div class="text">
+                <h1 style="margin: 0px;">Hello Again!</h1>
+                <h3 style="margin-top: 5px;">Welcome back you've been missed!</h3>
+                <form action="/signin" method="post">
+                    <div>
+                        <label for="i_user"><img width="20px" src="img/user.png" alt=""></label>
+                        <input id="i_user" name="username" type="text" placeholder="Username">
+                    </div>
+                    <div>
+                        <label for="i_pass"><img width="20px" src="img/padlock.png" alt=""></label>
+                        <input id="i_pass" name="password" type="password" placeholder="Password">
+                    </div>
+                    <input id="sign_up" class="sign" type="submit" value="Sign In">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
