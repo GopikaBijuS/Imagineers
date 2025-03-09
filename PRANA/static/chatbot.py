@@ -1,3 +1,6 @@
+
+
+
 import sys
 import os
 import google.generativeai as genai
@@ -24,16 +27,26 @@ model = genai.GenerativeModel(
 
 history = []
 
-# Get user input from Node.js
-user_input = sys.argv[1]  # Read message from command-line argument
+# ✅ Check if user input exists
+if len(sys.argv) > 1:
+    user_input = sys.argv[1].strip()  # Remove extra spaces
+    if not user_input:
+        print("Error: Empty message received")
+        sys.exit(1)  # Exit with error
 
-chat_session = model.start_chat(history=history)
-response = chat_session.send_message(user_input)
-model_response = response.text
+    # 🔹 Get AI response
+    chat_session = model.start_chat(history=history)
+    response = chat_session.send_message(user_input)
+    model_response = response.text.strip()
 
-# Print response (Node.js will capture this output)
-print(model_response)
+    # ✅ Ensure response is printed (so Node.js can capture it)
+    print(model_response)
 
-# Store conversation history
-history.append({"role": "user", "parts": [user_input]})
-history.append({"role": "model", "parts": [model_response]})
+    # Store conversation history
+    history.append({"role": "user", "parts": [user_input]})
+    history.append({"role": "model", "parts": [model_response]})
+
+else:
+    print("Error: No input received")
+    sys.exit(1)  # Exit with error
+

@@ -24,9 +24,6 @@ const User = require('./models/User');
 
 const app = express();
 
-const cors = require("cors");
-app.use(cors());
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'static')));
@@ -84,31 +81,6 @@ app.post('/signin', async (req, res) => {
         res.status(500).json({ message: 'Error during login!' });
     }
 });
-
-
-app.post("/chat", (req, res) => {
-    const userMessage = req.body.message;
-
-    // Run Python script
-    const pythonProcess = spawn("python", ["chatbot.py", userMessage]);
-
-    let botResponse = "";
-
-    // Capture Python output
-    pythonProcess.stdout.on("data", (data) => {
-        botResponse += data.toString();
-    });
-
-    pythonProcess.stderr.on("data", (data) => {
-        console.error(`Error: ${data}`);
-    });
-
-    pythonProcess.on("close", (code) => {
-        console.log(`Python process exited with code ${code}`);
-        res.json({ response: botResponse.trim() });
-    });
-});
-// Chatbot API route
 
 // Home Route (Protected)
 app.get('/home', (req, res) => {
