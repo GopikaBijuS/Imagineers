@@ -23,13 +23,13 @@ The official template repository for Define 3.0
 ## Project Details
 Personalized AI Yoga Guide.
 ### Overview
-Prana AI offers real-time detection of yoga postures, delivering precise accuracy levels to ensure proper alignment and maximize benefits. Our integrated AI chatbot, powered by Gemini AI, provides instant answers to your yoga-related queries, acting as your knowledgeable virtual guide.
+Prana AI offers real-time detection of yoga postures, delivering precise accuracy levels to ensure proper alignment and maximize benefits.
 
 ### Problem Statement
 Many yoga enthusiasts unknowingly perform poses incorrectly, risking injuries and hindering their progress. Additionally, the rise of unqualified instructors can lead to unsafe practices and inflated costs
 
 ### Solution
-_Explain your approach to solving the problem_
+Prana AI offers real-time detection of yoga postures, delivering precise accuracy levels to ensure proper alignment and maximize benefits. Our integrated AI chatbot, powered by Gemini AI, provides instant answers to your yoga-related queries, acting as your knowledgeable virtual guide.
 
 ### Demo
 [![Project Demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
