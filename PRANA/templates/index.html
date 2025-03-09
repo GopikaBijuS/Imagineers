@@ -4,8 +4,27 @@
     <meta charset="UTF-8">
     <title>Yoga Asanas</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='yoga-style.css') }}">
+    <link rel="stylesheet" href="../static/nav.css">
+    <style>
+        body{
+            background-image: url("../static/img/back_gr.jpeg");
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <img src="../static/img/logo2.png" alt="logo">
+        <h4>PRANA</h4>
+        <nav>
+            <ul>
+                <li><a href="../static/home.html">Home</a></li>
+                <li><a href="http://127.0.0.1:5000/">Asanas</a></li>
+                <li><a href="../static/sugg.html">Suggessions</a></li>
+                <li><a href="../static/about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
     <h1>YOGA ASANAS</h1>
     <div class="wrapper">
         <div class="row">

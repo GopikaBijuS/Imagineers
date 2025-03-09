@@ -16,7 +16,7 @@
 
         body {
             font-family: 'Garamond', serif;
-            background-image: url('prananew.jpeg');
+            background-image: url('./img/background.jpeg');
             background-size: 1520px 750px;
             background-position: center;
             text-align: center;
@@ -72,20 +72,148 @@
             line-height: 1.6;
             margin-bottom: 20px;
         }
+
+        body {
+    font-family: Arial, sans-serif;
+}
+
+.chatbot {
+    width: 300px;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    background: #ff8f06;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.chat-header button {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.chat-body {
+  margin-top: 70px;
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+.message {
+  padding: 10px;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+}
+.fromMe {
+  text-align: right;
+  background-color: #c6cef8; /* Light green background for sent messages */
+  border-radius: 13px 22px 0px 22px;
+  margin-left: auto;
+  width: fit-content;
+  height: max-content;
+  max-width: 65%;
+  padding: 10px;padding-left: 20px;padding-right: 10px;
+}
+
+.fromThem {
+  text-align: right;
+  float: left;
+  background-color: #5867b7b7; /* Light green background for sent messages */
+  border-radius: 22px 13px 22px 0px;
+  margin-right: auto;
+  width: fit-content;
+  height: max-content;
+  max-width: 65%;
+  padding: 10px;padding-left: 20px;padding-right: 10px;
+}
+
+.message li{
+  font-size: 10px;
+  list-style: none;
+  color: #322f2f;
+  float:right;
+}
+.message div{
+  float: left;
+  text-align:start;padding: 3px;
+  padding-right: 40px;
+  word-wrap: break-word;
+}
+.bot-message{
+    color: black;
+    background-color: #ff8f06;
+}
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-footer button {
+    background: #ff9d00fe;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff4400;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
     </style>
 </head>
 <body>
 
     <!-- Navigation Bar -->
     <header>
-        <img src="logo.png" alt="logo">
+        <img src="./img/logo.png" alt="logo">
         <h4>PRANA</h4>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="asanas.html">Asanas</a></li>
+                <li><a href="http://127.0.0.1:5000/">Asanas</a></li>
                 <li><a href="sugg.html">Suggessions</a></li>
+                <li><a href="about.html">About</a></li>
             </ul>
         </nav>
     </header>
@@ -98,5 +226,23 @@
             More than just a fitness app, we're committed to sustainable practices. Join our community and discover a yoga experience that's good for your body and the planet.</p>
     </div>
 
+    
+    <div class="chatbot">
+        <div class="chat-header">
+            <span>PRANA AI</span>
+            <button id="close-btn">&times;</button>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <p class="bot-message">Hello! How can I help you?</p>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <button id="chat-toggle"><img src="./img/logo.png" alt="logo" height="20"></button>
+
+    <script src="script2.js"></script>
 </body>
 </html>

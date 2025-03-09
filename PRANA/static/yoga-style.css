@@ -41,7 +41,7 @@
 button {
   padding: 10px 20px;
   font-size: 18px;
-  background-color: #4CAF50; /* Green background color */
+  background-color: #7b4809; /* Green background color */
   color: #fff; /* White text color */
   border: none;
   border-radius: 5px;
@@ -50,7 +50,7 @@ button {
 }
 
 button:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #9c5b0a9d; /* Darker green on hover */
 }
 
 .profile img {
@@ -91,7 +91,7 @@ h1 {
   /* Add this line to create a border */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   /* Add this line for a box shadow */
-  border-radius: 10px;
+  border-radius: 20px;
 
 
 }
@@ -138,7 +138,7 @@ h1 {
   height: 100%;
   backface-visibility: hidden;
   transform-style: preserve-3d;
-  border-radius: 6px;
+  border-radius: 20px;
 }
 
 .card .inner {
@@ -182,7 +182,7 @@ h1 {
 
 .card .back {
   transform: rotateY(180deg);
-  background-color: #fff;
+  background-color: #ede1bc;
   border: 2px solid rgb(240, 240, 240);
 }
 
