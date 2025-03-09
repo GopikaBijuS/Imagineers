@@ -41,7 +41,7 @@ def calculateAngle(a, b, c):
 
 def classifyPose(landmarks, output_image, selected_asana, display=False):
     label = "Unknown Pose"
-    color = (0, 0, 255)
+    color = (29, 29, 163)
 
     if not landmarks or len(landmarks) < 33:
         cv2.putText(output_image, label, (10, 30), cv2.FONT_HERSHEY_PLAIN, 2, color, 2)
@@ -106,7 +106,7 @@ def classifyPose(landmarks, output_image, selected_asana, display=False):
 
     # If the correct pose is detected, turn the label green
     if label == selected_asana:
-        color = (0, 255, 0)  # Green if pose matches
+        color = (122, 141, 61)  # Green if pose matches
     else:
         label = "Unknown Pose"
 

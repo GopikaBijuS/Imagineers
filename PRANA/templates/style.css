@@ -38,10 +38,8 @@ header li{
 }
 
 header li a{
-    color: white;
+    color: black;
     text-decoration: none;
-    display: flex;
-    justify-content: flex-end;
 }
 nav{
     margin-left: 300px;
