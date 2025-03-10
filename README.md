@@ -21,15 +21,15 @@ The official template repository for Define 3.0
 | Krishnapriya R | Member | https://github.com/Krisha-priya | www.linkedin.com/in/krishnapriya-r-73b3b8270 |
 
 ## Project Details
-
+Personalized AI Yoga Guide.
 ### Overview
-_A concise summary of your project (2-3 sentences)_
+Prana AI offers real-time detection of yoga postures, delivering precise accuracy levels to ensure proper alignment and maximize benefits.
 
 ### Problem Statement
-_Describe the problem your project aims to solve_
+Many yoga enthusiasts unknowingly perform poses incorrectly, risking injuries and hindering their progress. Additionally, the rise of unqualified instructors can lead to unsafe practices and inflated costs
 
 ### Solution
-_Explain your approach to solving the problem_
+Prana AI offers real-time detection of yoga postures, delivering precise accuracy levels to ensure proper alignment and maximize benefits. Our integrated AI chatbot, powered by Gemini AI, provides instant answers to your yoga-related queries, acting as your knowledgeable virtual guide.
 
 ### Demo
 [![Project Demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
@@ -41,17 +41,16 @@ _Replace VIDEO_ID with your YouTube video ID or provide an alternative demo link
 ## Technical Implementation
 
 ### Technologies Used
-- **Frontend**: [Technologies]
-- **Backend**: [Technologies]
-- **Database**: [Technologies]
-- **APIs**: [Technologies]
+- **Frontend**: HTML,CSS,JS
+- **Backend**: Node.js,Flask
+- **Database**: MongoDB
+- **APIs**: Gemini API
 - **DevOps**: [Technologies]
-- **Other Tools**: [Technologies]
+- **Other Tools**: Mediapipe
 
 ### Key Features
-- Feature 1
-- Feature 2
-- Feature 3
+- Perfect your yoga poses with real-time accuracy feedback.
+- Receive personalized guidance from our AI chatbot.
 
 ## Setup Instructions
 
@@ -62,12 +61,12 @@ _Replace VIDEO_ID with your YouTube video ID or provide an alternative demo link
 
 ### Installation 
 ```bash
-
+git clone https://github.com/GopikaBijuS/Imagineers
 ```
 
 ### Running the Project
 ```bash
-
+node server.js
 ```
 
 ## Additional Resources
