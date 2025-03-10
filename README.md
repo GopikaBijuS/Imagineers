@@ -51,6 +51,8 @@ _Replace VIDEO_ID with your YouTube video ID or provide an alternative demo link
 ### Key Features
 - Perfect your yoga poses with real-time accuracy feedback.
 - Receive personalized guidance from our AI chatbot.
+- voice command recognition
+- voice instructions providing for users
 
 ## Setup Instructions
 
