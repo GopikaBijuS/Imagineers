@@ -78,7 +78,7 @@
 }
 
 .chatbot {
-    width: 300px;
+    width: 400px;
     position: fixed;
     bottom: 80px;
     right: 20px;
@@ -87,7 +87,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     display: none;
     flex-direction: column;
-    overflow: hidden;
+    overflow:scroll;
 }
 
 .chat-header {
@@ -198,6 +198,63 @@
     border-radius: 50%;
     cursor: pointer;
 }
+/* Chat Container */
+#chat-container {
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 10px;
+  padding: 15px;
+  background: #f9f9f9;
+}
+
+/* Chat Body (Scrollable) */
+#chat-body {
+  height: 400px; /* Fixed height with scrolling */
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background: white;
+}
+
+/* User & Bot Messages */
+.message {
+  padding: 8px 12px;
+  margin: 5px 0;
+  border-radius: 8px;
+  max-width: 80%;
+  word-wrap: break-word; /* Ensure long text wraps */
+  white-space: pre-wrap; /* Preserve formatting */
+}
+
+/* User Messages */
+.user-message {
+  background: #007bff;
+  color: white;
+  align-self: flex-end;
+  text-align: right;
+  margin-left: auto;
+}
+
+/* Bot Messages */
+.bot-message {
+  background: #e9ecef;
+  color: black;
+  align-self: flex-start;
+  text-align: left;
+  margin-right: auto;
+}
+
+/* Scrollbar Styling */
+#chat-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+#chat-body::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
 
 
     </style>
@@ -233,7 +290,7 @@
             <button id="close-btn">&times;</button>
         </div>
         <div class="chat-body" id="chat-body">
-            <p class="bot-message">Hello! How can I help you?</p>
+            
         </div>
         <div class="chat-footer">
             <input type="text" id="user-input" placeholder="Type a message...">

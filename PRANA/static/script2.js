@@ -13,28 +13,47 @@ document.getElementById("send-btn").addEventListener("click", function () {
   let chatBody = document.getElementById("chat-body");
 
   // Display user message
-  const userMessage = document.createElement("div");
-  userMessage.classList.add("message", "fromMe");
+  let userMessage = document.createElement("div");
+  userMessage.classList.add("message", "user-message");
   userMessage.textContent = userInput;
   chatBody.appendChild(userMessage);
 
-  // Send message to Node.js server
-  fetch("http://localhost:5000/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: userInput }),
+  // Create a loading message while waiting for response
+  let loadingMessage = document.createElement("div");
+  loadingMessage.classList.add("message", "bot-message");
+  loadingMessage.textContent = "Thinking...";
+  chatBody.appendChild(loadingMessage);
+
+  // Auto-scroll to bottom
+  chatBody.scrollTop = chatBody.scrollHeight;
+
+  // Call Gemini AI API
+  fetch("/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: userInput }),
   })
-  .then((response) => response.json())
-  .then((data) => {
+    .then((response) => response.json())
+    .then((data) => {
+      // Remove the "Thinking..." message
+      loadingMessage.remove();
+
       // Display bot response
-      const botMessage = document.createElement("div");
-      botMessage.classList.add("message", "fromThem");
+      let botMessage = document.createElement("div");
+      botMessage.classList.add("message", "bot-message");
       botMessage.textContent = data.response;
       chatBody.appendChild(botMessage);
-      
-      chatBody.scrollTop = chatBody.scrollHeight;
-  })
-  .catch((error) => console.error("Error:", error));
 
+      // Auto-scroll to latest message
+      chatBody.scrollTop = chatBody.scrollHeight;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      loadingMessage.textContent = "Error getting response!";
+    });
+
+  // Clear user input field
   document.getElementById("user-input").value = "";
 });
+
+
