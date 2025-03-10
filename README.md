@@ -36,7 +36,7 @@ Prana AI offers real-time detection of yoga postures, delivering precise accurac
 _Replace VIDEO_ID with your YouTube video ID or provide an alternative demo link_
 
 ### Live Project
-[Project Name](https://your-project-url.com)
+PRANA AI
 
 ## Technical Implementation
 
